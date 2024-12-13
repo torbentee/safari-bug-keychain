@@ -1,0 +1,10 @@
+services:
+  web:
+    image: nginx:1.27
+    ports:
+      - 127.0.0.1:8081:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./.htpasswd:/etc/nginx/.htpasswd
+      - ./index.html:/usr/share/nginx/html/index.html
+      - ./asset.js:/usr/share/nginx/html/asset.js
